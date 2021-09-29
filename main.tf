@@ -14,16 +14,16 @@ resource "aws_ecs_cluster" "cluster" {
 }
 
 module "ecs-fargate" {
-  source = "umotif-public/ecs-fargate/aws"
+  source  = "umotif-public/ecs-fargate/aws"
   version = "~> 6.1.0"
 
   name_prefix        = "ecs-fargate-example"
-  vpc_id             = aws_vpc.ecs_vpc
-  private_subnet_ids = [aws_subnet.private_subnet_1, aws_subnet.private_subnet_2]
+  vpc_id             = aws_vpc.ecs_vpc.id
+  private_subnet_ids = [aws_subnet.private_subnet_1.id, aws_subnet.private_subnet_2.id]
 
-  cluster_id         = aws_ecs_cluster.cluster.id
+  cluster_id = aws_ecs_cluster.cluster.id
 
-  task_container_image   = "centos:latest"
+  task_container_image   = "centos"
   task_definition_cpu    = 256
   task_definition_memory = 512
 
@@ -46,6 +46,7 @@ module "ecs-fargate" {
 
   tags = {
     Environment = "test"
-    Project = "Test"
+    Project     = "Test"
   }
 }
+
