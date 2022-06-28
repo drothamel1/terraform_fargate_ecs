@@ -1,4 +1,5 @@
 # Launch an ECS Cluster with Fargate and Terraform
+
 ## And don't make the mistake that I did!
 
 View the screencast here: https://youtu.be/fb2zJlcE1bE
@@ -24,12 +25,13 @@ As I said above, the files in this repo are portable, as they are, so you don't 
 
 ## 3. Run the Terraform Commands
 
-Once you have all the code just how you need it, you can run a 
-* ```Terraform init``` to initialize the backend
-* ```Terraform fmt``` to get all your code beautified 
-* ```Terraform validate``` to make sure everything is valid
-* ```Terraform plan``` to check all of the resources you're going to create
-* ```Terraform --auto-approve``` to start the deployment
+Once you have all the code just how you need it, you can run a
+
+* ``Terraform init`` to initialize the backend
+* ``Terraform fmt`` to get all your code beautified
+* ``Terraform validate`` to make sure everything is valid
+* ``Terraform plan`` to check all of the resources you're going to create
+* ``Terraform apply --auto-approve`` to start the deployment
 
 ## 4. Verify Your Deployment
 
@@ -43,6 +45,6 @@ You might mess up and accidently publish your AWS credentials to GitHub. That's 
 
 * AWS and GitHub will both notify you of your mistake and urge you to rotate your keys in AWS
 * Rotate your keys via AWS IAM __immediately__
-* Once you have rotated your keys, you will need to remove the KeyQuarantine policy that AWS has attached to your account 
+* Once you have rotated your keys, you will need to remove the KeyQuarantine policy that AWS has attached to your account
 
 If you want to see how all of this works, and how to fix it, you can watch the screencast at the YouTube link at the top of this readme.
